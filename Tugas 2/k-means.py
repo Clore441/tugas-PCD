@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import cv2
 
 # Membaca gambar
-image_path = r'C:\\Users\\a516j\\Downloads\\WhatsApp Image 2024-10-08 at 21.59.47_ca82c59d.jpg'
+image_path = r'C:/Users/a516j/Downloads/download (1).jpg'
 image = cv2.imread(image_path)
 
 # Mengonversi BGR ke RGB (OpenCV membaca gambar dalam format BGR, sementara matplotlib mengharapkan format RGB)

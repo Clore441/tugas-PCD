@@ -29,7 +29,7 @@ cv2.namedWindow("mask", 2)
 cv2.namedWindow("segmented", 3)
 
 # Memuat gambar dari file
-image_path = 'C:\\Users\\a516j\\Downloads\\Frame 1.jpg'  # Ganti dengan path gambar Anda
+image_path = 'C:/Users/a516j/Downloads/download (1).jpg'  # Ganti dengan path gambar Anda
 src = cv2.imread(image_path)
 
 # Memeriksa apakah gambar berhasil dimuat

@@ -4,7 +4,7 @@ from scipy import ndimage
 import matplotlib.pyplot as plt
 
 # Memuat gambar dari file
-image_path = 'C:\\Users\\a516j\\Downloads\\WhatsApp Image 2024-10-08 at 21.59.47_ca82c59d.jpg'
+image_path = 's'
 src = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
 
 # Memeriksa apakah gambar berhasil dimuat
