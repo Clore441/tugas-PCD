@@ -2,25 +2,29 @@
 
 Color transform hue dilakukan untuk mentransformasi warna dari satu gambar ke gambar lainnya menggunakan metode manipulasi warna di ruang warna HSV (Hue, Saturation, Value).
 
-## Import dan Konfigurasi
-,,,python
-import os, sys, inspect
-import cv2
-import numpy as np
-import argparse
-,,,
+transformasi tersebut dilakukan mengikuti Langkah berikut.
+## Membaca dan Mengonversi Gambar
+Gambar sumber dan target dibaca dari file lokal, kemudian dikonversi dari ruang warna BGR ke HSV. Hal ini penting karena transformasi warna dilakukan pada saluran Hue, yang lebih intuitif di ruang HSV.
 
-Import library:
-os, sys, dan inspect: Untuk manipulasi path file.
-cv2: OpenCV, digunakan untuk manipulasi gambar.
-numpy: Digunakan untuk operasi matematis pada array.
-argparse: Untuk menangani argumen baris perintah.
+## Memisahkan Saluran HSV
+Setelah konversi, setiap gambar dipecah menjadi tiga saluran:
+- Hue (warna dasar)
+- Saturation (intensitas warna)
+- Value (kecerahan).
 
-## Penanganan Path
-,,,python
-cmd_subfolder = os.path.realpath(os.path.abspath(os.path.join(
-    os.path.split(inspect.getfile(inspect.currentframe()))[0], "..", "..", "Image_utils.py")))
-if cmd_subfolder not in sys.path:
-    sys.path.insert(0, cmd_subfolder)
-,,,
-Menambahkan folder Image_utils.py ke sys.path agar dapat mengimpor file Python eksternal jika diperlukan (meskipun tidak digunakan di kode ini).
+## Menghitung Statistik Warna
+Rata-rata (mean) dan deviasi standar (standard deviation) dihitung untuk saluran Hue dari gambar sumber dan target.
+- Mean menggambarkan nilai warna rata-rata.
+- Standard deviation menggambarkan sebaran atau variasi warna.
+
+## Transformasi Saluran Hue
+- Nilai Hue target disesuaikan dengan mengurangi -rata-rata Hue target, sehingga menjadi nol relatif terhadap sumber.
+- Variasi warna target disesuaikan dengan skala deviasi standar warna sumber.
+- Setelah itu, nilai Hue sumber ditambahkan untuk mencocokkan karakteristik warna sumber.
+- Nilai Hue yang dihasilkan dibatasi (clipped) dalam rentang valid [0, 360].
+
+## Rekonstruksi Gambar
+Setelah transformasi saluran Hue, saluran Saturation dan Value target digabungkan kembali dengan saluran Hue yang telah dimodifikasi. Gambar ini kemudian dikonversi kembali ke ruang warna BGR untuk dapat ditampilkan dan disimpan.
+
+## Visualisasi dan Penyimpanan Hasil
+Hasil transformasi ditampilkan di layar untuk dibandingkan dengan gambar asli. Kemudian, gambar hasil transformasi disimpan dalam file result.jpg.
