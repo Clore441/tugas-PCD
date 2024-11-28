@@ -62,9 +62,11 @@ Membaca gambar dengan OpenCV, mengubah gambar dari BGR ke HSV dan dikonversi ke 
 
 ## Hasil
 
-menampilkan original source dan target beserta result 
+### menampilkan original source dan target beserta result 
+
 ![Screenshot](Screenshot%202024-11-28%20111544.png)
 
 
-hasil file result.jpg
+### hasil file result.jpg
+
 ![Result](result.jpg)
