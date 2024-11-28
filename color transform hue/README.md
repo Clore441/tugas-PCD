@@ -33,7 +33,7 @@ Hasil transformasi ditampilkan di layar untuk dibandingkan dengan gambar asli. K
 ## source kode
 Beberapa baris source kode yang saya ingin bahas
 
-'''python
+```python
 def image_resize(image, width=-1, height=-1):
     shape = image.shape
     if width == -1:
@@ -45,10 +45,10 @@ def image_resize(image, width=-1, height=-1):
         return cv2.resize(image, (width, int(width * shape[0] / shape[1])))
     else:
         cv2.resize(image, (width, height))
-'''
+```
 image resize digunakan untuk mengubah ukuran gambar secara proporsional berdasarkan width atau height.
 
-'''python
+```python
 originalS = cv2.imread("orange.jpeg")
 originalT = cv2.imread("download (1).jpg")
 
@@ -57,7 +57,7 @@ target = cv2.cvtColor(originalT, cv2.COLOR_BGR2HSV).astype("float32")
 
 cv2.imshow('original source', originalS)
 cv2.imshow('original target', originalT)
-'''
+```
 Membaca gambar dengan OpenCV, mengubah gambar dari BGR ke HSV dan dikonversi ke tipe data float32, lalu menampilkan sumber dan target secara original
 
 ## Hasil
