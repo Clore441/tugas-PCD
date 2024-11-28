@@ -63,7 +63,8 @@ Membaca gambar dengan OpenCV, mengubah gambar dari BGR ke HSV dan dikonversi ke 
 ## Hasil
 
 menampilkan original source dan target beserta result 
-![Alt text](C:\Users\a516j\OneDrive\Documents\pengolahan citra\Screenshot 2024-11-28 111544.png "original dan hasil")
+![Screenshot](file:///C:/Users/a516j/OneDrive/Documents/pengolahan%20citra/Screenshot%202024-11-28%20111544.png)
+
 
 hasil file result.jpg
-![Alt text](C:/Users/a516j/OneDrive/Documents/pengolahan citra/result.jpg "result")
+![Result](file:///C:/Users/a516j/OneDrive/Documents/pengolahan%20citra/result.jpg)
